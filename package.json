@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@linear/sdk": "^95.1.0"
+  },
+  "name": "linear-claude-agent",
+  "version": "0.1.0",
+  "description": "Assign a Linear issue to Claude and get a steerable local Claude Code session",
+  "license": "MIT",
+  "type": "module"
+}
