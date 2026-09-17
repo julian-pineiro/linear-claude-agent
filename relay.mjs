@@ -143,7 +143,8 @@ const startSession = async (session) => {
     `"$(cat ${quote(promptFile)})"`,
     "--remote-control", quote(`${issue.identifier} ${issue.title}`),
     "--model", model,
-    "--permission-mode", "acceptEdits",
+    // Nothing to answer a prompt when nobody is watching. Deny rules below still apply.
+    "--dangerously-skip-permissions",
     "--disallowedTools", quote(DISALLOWED_TOOLS.join(",")),
   ].join(" ");
 

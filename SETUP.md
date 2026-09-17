@@ -134,6 +134,7 @@ If nothing happens, check in this order:
 - Replying on the Linear issue types into the running session.
 - Model per issue: `[model=sonnet]` in the description, or a `haiku`/`sonnet`/`opus` label.
 - Each issue gets a worktree in `WORKTREE_DIR`, on branch `claude/<issue>`.
-- Edits inside the worktree are automatic; anything else asks them in the app.
+- Sessions skip permission prompts, because nobody is at the terminal. `DISALLOWED_TOOLS` in
+  `.env` is the only limit, and shell access is otherwise unrestricted. Say this out loud.
 - Sessions only run while the Mac is awake and logged in.
 - Worktrees pile up. Remove one with `git -C <repo> worktree remove <path>`.

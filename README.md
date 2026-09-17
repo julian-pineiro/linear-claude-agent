@@ -18,8 +18,9 @@ machine, on your Claude subscription, in a session you can jump into mid-task.
 6. Claude commits, pushes and opens a PR, then comments the link.
 
 Pick the model per issue with `[model=sonnet]` in the description, or a `haiku` / `sonnet` /
-`opus` label. Edits inside the worktree are automatic; anything else asks you, in whichever app
-you're watching from.
+`opus` label. Sessions run with `--dangerously-skip-permissions`, since nobody is at the terminal
+to answer a prompt — `DISALLOWED_TOOLS` is what still holds. Read [Worth knowing](#worth-knowing)
+before you point this at a repo that matters.
 
 ## Setup
 
@@ -54,9 +55,13 @@ To do it by hand, follow [SETUP.md](SETUP.md) yourself.
 ## Worth knowing
 
 - **Sessions run only while your Mac is awake and logged in.** Nothing runs in the cloud.
-- **Shell access is not sandboxed.** A session can reach anything your user can. `DISALLOWED_TOOLS`
-  blocks accidents, not a determined attempt; issue text is effectively a prompt, so only let
-  people you trust assign to the agent.
+- **Sessions skip permission prompts.** They run unattended, so there is nobody to approve
+  anything; `--dangerously-skip-permissions` is what makes that possible. Deny rules do survive
+  bypass — a `DISALLOWED_TOOLS` entry is still refused — but they are a list of known accidents,
+  not a sandbox.
+- **Shell access is not sandboxed.** A session can reach anything your user can, including files
+  outside the repo and your logged-in CLIs. Issue text is effectively a prompt, so only let people
+  you trust assign to the agent.
 - **Pro limits are shared** with your own Claude Code use. Several issues at once will exhaust
   a 5-hour window quickly.
 - **Worktrees accumulate.** Remove one with `git -C <repo> worktree remove <path>`.
