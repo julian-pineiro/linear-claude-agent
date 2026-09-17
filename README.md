@@ -26,7 +26,7 @@ you're watching from.
 Paste this into Claude Code from the repo you want the agent to work in:
 
 ```
-Set this up for me: https://github.com/OWNER/linear-claude-agent/blob/main/SETUP.md
+Set this up for me: https://github.com/julian-pineiro/linear-claude-agent/blob/main/SETUP.md
 Read that file and follow it step by step. Ask me for anything only I can do.
 ```
 

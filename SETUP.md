@@ -54,7 +54,7 @@ Saving gives a **Client ID**, a **Client secret** and a **Webhook signing secret
 ## 4. Install the relay
 
 ```bash
-git clone https://github.com/<owner>/linear-claude-agent.git ~/.linear-claude
+git clone https://github.com/julian-pineiro/linear-claude-agent.git ~/.linear-claude
 npm --prefix ~/.linear-claude install
 mkdir -p ~/.linear-claude/prompts
 ```
